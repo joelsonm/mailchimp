@@ -54,7 +54,7 @@ class Resource
             'headers' => [
                 'Authorization' => "apikey {$this->apikey}"
             ],
-            'json' => $params,
+            'body' => collect($params)->toJson(),
             'exceptions' => false
         ]);
 
