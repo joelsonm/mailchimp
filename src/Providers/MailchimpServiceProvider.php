@@ -3,6 +3,7 @@
 namespace Joelsonm\Mailchimp\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Joelsonm;
 
 class MailchimpServiceProvider extends ServiceProvider
 {
