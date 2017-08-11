@@ -1,10 +1,12 @@
 # API REST MAILCHIMP
 
-##PRIMEIRO PASSO - Instalar Pacote
-composer require joelsonm/mailchimp
+:: PRIMEIRO PASSO - Instalar Pacote
+    
+    composer require joelsonm/mailchimp
 
-##SEGUNDO PASSO - Registrar Provider e Facades
-###Joelsonm\Mailchimp\Providers\MailchimpServiceProvider::class
+:: SEGUNDO PASSO - Registrar Provider e Facades 
+ 
+    Joelsonm\Mailchimp\Providers\MailchimpServiceProvider::class
 
-###'MailchimpEcommerce' => Joelsonm\Mailchimp\Facades\EcommerceFacade::class
+    'MailchimpEcommerce' => Joelsonm\Mailchimp\Facades\EcommerceFacade::class
 
