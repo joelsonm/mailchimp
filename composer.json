@@ -3,7 +3,6 @@
     "description": "API Mailchimp",
     "type": "library",
     "require": {
-        "laravel/laravel": "5.*",
         "guzzlehttp/guzzle": "6.3.*"
     },
     "authors": [
