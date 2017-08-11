@@ -1,6 +1,6 @@
 {
     "name": "joelsonm/mailchimp",
-    "description": "Api REST Mailchimp",
+    "description": "API REST Mailchimp",
     "keywords": ["mailchimp", "laravel", "email"],
     "type": "library",
     "version": "1.0",
@@ -20,5 +20,6 @@
         "psr-0": {
             "Joelsonm\\": "src/"
         }
-    }
+    },
+    "minimum-stability": "dev"
 }
