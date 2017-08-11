@@ -17,8 +17,8 @@
         }
     ],
     "autoload": {
-        "psr-0": {
-            "Joelsonm": "src/"
+        "psr-4": {
+            "Joelsonm\\Mailchimp\\": "src"
         }
     }
 }
