@@ -2,7 +2,6 @@
 
 namespace Joelsonm\Mailchimp;
 
-use GuzzleHttp\Client;
 /**
  *
  */
@@ -15,7 +14,7 @@ class Resource
 
     public function __construct()
     {
-        $this->client = new Client(['base_uri' => $this->endpoint()]);
+        $this->client = new \GuzzleHttp\Client();
     }
 
     private function endpoint()
@@ -50,11 +49,12 @@ class Resource
 
     protected function request(string $method, string $uri, array $params = [], array $options = [])
     {
-        $response = $this->client->request($method, $uri, [
+        $response = $this->client->request($method, "{$this->endpoint()}{$uri}", [
             'headers' => [
+                'Content-Type' => 'application/json',
                 'Authorization' => "apikey {$this->apikey}"
             ],
-            'body' => collect($params)->toJson(),
+            'body' => json_encode($params),
             'exceptions' => false
         ]);
 
