@@ -14,6 +14,7 @@
             "email": "joelsonm@live.com"
         }
     ],
+    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
             "Joelsonm\\": "src/"
