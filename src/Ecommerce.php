@@ -15,6 +15,11 @@ class Ecommerce extends Resource
         parent::__construct();
     }
 
+    public function test()
+    {
+        return 'hello';
+    }
+
     public function createStore(array $params)
     {
         return $this->post("ecommerce/stores", $params);
