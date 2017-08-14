@@ -13,8 +13,8 @@ class Mailchimp
 
     function __construct($apikey, $dc)
     {
-        MailchimpList::$apikey = $apikey;
-        MailchimpList::$dc = $dc;
+        Mailchimp::$apikey = $apikey;
+        Mailchimp::$dc = $dc;
     }
 
     public function members()
