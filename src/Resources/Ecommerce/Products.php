@@ -8,10 +8,6 @@ use Joelsonm\Mailchimp\RequestResource;
  */
 class Products extends RequestResource
 {
-    function __construct()
-    {
-        parent::__construct($apikey, $dc);
-    }
     public function create($store_id, array $params)
     {
         return $this->postRequest("ecommerce/stores/{$store_id}/products", $params);

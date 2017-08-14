@@ -8,12 +8,37 @@ use Joelsonm\Mailchimp\Resources\Ecommerce;
  */
 class EcommerceStore
 {
+    public static $apikey;
+    public static $dc;
+
     function __construct($apikey, $dc)
     {
-        $this->stores = new Ecommerce\Stores($apikey, $dc);
-        $this->products = new Ecommerce\Products($apikey, $dc);
-        $this->customers = new Ecommerce\Customers($apikey, $dc);
-        $this->carts = new Ecommerce\Carts($apikey, $dc);
-        $this->orders = new Ecommerce\Orders($apikey, $dc);
+        EcommerceStore::$apikey = $apikey;
+        EcommerceStore::$dc = $dc;
+    }
+
+    public function stores()
+    {
+        return new Ecommerce\Stores();
+    }
+
+    public function products()
+    {
+        return new Ecommerce\Products();
+    }
+
+    public function customers()
+    {
+        return new Ecommerce\Customers();
+    }
+
+    public function carts()
+    {
+        return new Ecommerce\Carts();
+    }
+
+    public function orders()
+    {
+        return new Ecommerce\Orders();
     }
 }

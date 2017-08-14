@@ -2,6 +2,7 @@
 
 namespace Joelsonm\Mailchimp;
 
+use Joelsonm\Mailchimp\Resources\EcommerceStore;
 /**
  *
  */
@@ -12,10 +13,10 @@ class RequestResource
     protected $apikey;
     protected $dc;
 
-    function __construct($apikey, $dc)
+    function __construct()
     {
-        $this->apikey = $apikey;
-        $this->dc = $dc;
+        $this->apikey = EcommerceStore::$apikey;
+        $this->dc = EcommerceStore::$dc;
 
         $this->client = new \GuzzleHttp\Client([
             'base_uri' => $this->endpoint(),
