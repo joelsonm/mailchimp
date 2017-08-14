@@ -14,21 +14,21 @@ class Products extends RequestResource
     }
     public function create($store_id, array $params)
     {
-        return $this->post("ecommerce/stores/{$store_id}/products", $params);
+        return $this->postRequest("ecommerce/stores/{$store_id}/products", $params);
     }
 
     public function get($store_id, $id = '')
     {
-        return $this->get("ecommerce/stores/{$store_id}/products/{$id}");
+        return $this->getRequest("ecommerce/stores/{$store_id}/products/{$id}");
     }
 
     public function update($store_id, $id, array $params)
     {
-        return $this->patch("ecommerce/stores/{$store_id}/products/{$id}", $params);
+        return $this->patchRequest("ecommerce/stores/{$store_id}/products/{$id}", $params);
     }
 
     public function delete($store_id, $id)
     {
-        return $this->delete("ecommerce/stores/{$store_id}/products/{$id}");
+        return $this->deleteRequest("ecommerce/stores/{$store_id}/products/{$id}");
     }
 }

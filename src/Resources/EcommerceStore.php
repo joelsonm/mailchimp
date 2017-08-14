@@ -1,12 +1,12 @@
 <?php
 
-namespace Joelsonm\Mailchimp;
+namespace Joelsonm\Mailchimp\Resources;
 
 use Joelsonm\Mailchimp\Resources\Ecommerce;
 /**
  * API V.1.0.0
  */
-class Ecommerce
+class EcommerceStore
 {
     function __construct($apikey, $dc)
     {

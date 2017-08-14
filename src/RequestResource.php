@@ -32,35 +32,35 @@ class RequestResource
         return str_replace('<dc>', $this->dc, $this->endpoint_);
     }
 
-    public function get(string $uri, array $params = [])
+    public function getRequest(string $uri, array $params = [])
     {
         $response = $this->client->get($uri);
 
         return $this->response($response);
     }
 
-    public function post(string $uri, array $params = [])
+    public function postRequest(string $uri, array $params = [])
     {
         $response = $this->client->post($uri, ['json' => $params]);
 
         return $this->response($response);
     }
 
-    public function patch(string $uri, array $params = [])
+    public function patchRequest(string $uri, array $params = [])
     {
         $response = $this->client->patch($uri, ['json' => $params]);
 
         return $this->response($response);
     }
 
-    public function put(string $uri, array $params = [])
+    public function putRequest(string $uri, array $params = [])
     {
         $response = $this->client->put($uri, ['json' => $params]);
 
         return $this->response($response);
     }
 
-    public function delete(string $uri, array $params = [])
+    public function deleteRequest(string $uri, array $params = [])
     {
         $response = $this->client->delete($uri);
 

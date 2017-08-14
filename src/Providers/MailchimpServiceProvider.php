@@ -29,7 +29,7 @@ class MailchimpServiceProvider extends ServiceProvider
     {
         //
         $this->app->bind('Joelsonm\Mailchimp\Ecommerce', function ($app) {
-            return new Joelsonm\Mailchimp\Resources\Ecommerce(\Config::get('mailchimp.apikey'), \Config::get('mailchimp.dc'));
+            return new Joelsonm\Mailchimp\Resources\EcommerceStore(\Config::get('mailchimp.apikey'), \Config::get('mailchimp.dc'));
         });
     }
 }

@@ -14,21 +14,21 @@ class Customers extends RequestResource
     }
     public function create($store_id, array $params)
     {
-        return $this->post("ecommerce/stores/{$store_id}/customers", $params);
+        return $this->postRequest("ecommerce/stores/{$store_id}/customers", $params);
     }
 
     public function get($store_id, $id = '')
     {
-        return $this->get("ecommerce/stores/{$store_id}/customers/{$id}");
+        return $this->getRequest("ecommerce/stores/{$store_id}/customers/{$id}");
     }
 
     public function update($store_id, $id, array $params)
     {
-        return $this->put("ecommerce/stores/{$store_id}/customers/{$id}", $params);
+        return $this->putRequest("ecommerce/stores/{$store_id}/customers/{$id}", $params);
     }
 
     public function delete($store_id, $id)
     {
-        return $this->delete("ecommerce/stores/{$store_id}/customers/{$id}");
+        return $this->deleteRequest("ecommerce/stores/{$store_id}/customers/{$id}");
     }
 }
