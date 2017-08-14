@@ -8,15 +8,6 @@ use Joelsonm\Mailchimp\Resources\Ecommerce;
  */
 class EcommerceStore
 {
-    public static $apikey;
-    public static $dc;
-
-    function __construct($apikey, $dc)
-    {
-        EcommerceStore::$apikey = $apikey;
-        EcommerceStore::$dc = $dc;
-    }
-
     public function stores()
     {
         return new Ecommerce\Stores();

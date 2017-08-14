@@ -15,8 +15,8 @@ class RequestResource
 
     function __construct()
     {
-        $this->apikey = EcommerceStore::$apikey;
-        $this->dc = EcommerceStore::$dc;
+        $this->apikey = \Config::get('mailchimp.apikey');
+        $this->dc = \Config::get('mailchimp.dc');
 
         $this->client = new \GuzzleHttp\Client([
             'base_uri' => $this->endpoint(),
