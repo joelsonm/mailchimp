@@ -14,7 +14,14 @@ class Resource
 
     public function __construct()
     {
-        $this->client = new \GuzzleHttp\Client();
+        $this->client = new \GuzzleHttp\Client([
+            'base_uri' => $this->endpoint(),
+            'headers' => [
+                'Content-Type' => 'application/json',
+                'Authorization' => "apikey {$this->apikey}"
+            ],
+            'exceptions' => false
+        ]);
     }
 
     private function endpoint()
@@ -24,43 +31,44 @@ class Resource
 
     public function get(string $uri, array $params = [])
     {
-        return $this->request('GET', $uri, $params);
+        $response = $this->client->get($uri);
+
+        return $this->response($response);
     }
 
     public function post(string $uri, array $params = [])
     {
-        return $this->request('POST', $uri, $params);
+        $response = $this->client->post($uri, ['json' => $params]);
+
+        return $this->response($response);
     }
 
     public function patch(string $uri, array $params = [])
     {
-        return $this->request('PATCH', $uri, $params);
+        $response = $this->client->patch($uri, ['json' => $params]);
+
+        return $this->response($response);
     }
 
     public function put(string $uri, array $params = [])
     {
-        return $this->request('PUT', $uri, $params);
+        $response = $this->client->put($uri, ['json' => $params]);
+
+        return $this->response($response);
     }
 
     public function delete(string $uri, array $params = [])
     {
-        return $this->request('DELETE', $uri, $params);
+        $response = $this->client->delete($uri);
+
+        return $this->response($response);
     }
 
-    protected function request(string $method, string $uri, array $params = [], array $options = [])
-    {
-        $response = $this->client->request($method, "{$this->endpoint()}{$uri}", [
-            'headers' => [
-                'Content-Type' => 'application/json',
-                'Authorization' => "apikey {$this->apikey}"
-            ],
-            'body' => json_encode($params),
-            'exceptions' => false
-        ]);
-
+    private function response($response){
         return (object) [
             'status' => $response->getStatusCode(),
             'data' => json_decode($response->getBody())
         ];
     }
+
 }
