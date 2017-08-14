@@ -5,15 +5,18 @@ namespace Joelsonm\Mailchimp;
 /**
  *
  */
-class Resource
+class RequestResource
 {
     private $endpoint_ = 'https://<dc>.api.mailchimp.com/3.0/';
 
     protected $apikey;
     protected $dc;
 
-    public function __construct()
+    function __construct($apikey, $dc)
     {
+        $this->apikey = $apikey;
+        $this->dc = $dc;
+
         $this->client = new \GuzzleHttp\Client([
             'base_uri' => $this->endpoint(),
             'headers' => [
