@@ -4,7 +4,7 @@ namespace Joelsonm\Mailchimp;
 
 use Joelsonm\Mailchimp\Resources\Ecommerce;
 /**
- *
+ * API V.1.0.0
  */
 class Ecommerce
 {
