@@ -1,6 +1,6 @@
 <?php
 
-namespace Joelsonm\Mailchimp;
+namespace Joelsonm\Mailchimp\Resources;
 
 use Joelsonm\Mailchimp\Resources\Lists;
 /**
