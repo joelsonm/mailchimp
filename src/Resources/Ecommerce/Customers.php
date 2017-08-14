@@ -12,22 +12,22 @@ class Customers extends RequestResource
     {
         parent::__construct($apikey, $dc);
     }
-    public function createCustomer($store_id, array $params)
+    public function create($store_id, array $params)
     {
         return $this->post("ecommerce/stores/{$store_id}/customers", $params);
     }
 
-    public function getCustomer($store_id, $id = '')
+    public function get($store_id, $id = '')
     {
         return $this->get("ecommerce/stores/{$store_id}/customers/{$id}");
     }
 
-    public function updateCustomer($store_id, $id, array $params)
+    public function update($store_id, $id, array $params)
     {
         return $this->put("ecommerce/stores/{$store_id}/customers/{$id}", $params);
     }
 
-    public function deleteCustomer($store_id, $id)
+    public function delete($store_id, $id)
     {
         return $this->delete("ecommerce/stores/{$store_id}/customers/{$id}");
     }
